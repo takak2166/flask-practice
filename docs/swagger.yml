@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  description: "This project is flask practice."
+  version: "1.0.0"
+  title: "Flask Practice"
+host: "localhost"
+basePath: "/"
+tags:
+- name: "greeting"
+  description: "World greetings" 
+schemes:
+- "http"
+paths:
+  /greeting:
+    get:
+      tags:
+      - "greeting"
+      summary: "get world greetings"
+      description: ""
+      operationId: "findGreetings"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Greeting"
+        "404":
+          description: "Not Found"
+  /greeting/{greetingId}:
+    get:
+      tags:
+      - "greeting"
+      summary: "Find greeting by ID"
+      description: ""
+      operationId: "findGreetings"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Greeting"
+        "404":
+          description: "Not Found"
+definitions:
+  Greeting:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      language:
+        type: "string"
+      spell:
+        type: "string"
