@@ -8,6 +8,7 @@ authors = ["tk9559 <28010438+tk9559@users.noreply.github.com>"]
 python = "^3.9"
 Flask = "^2.0.1"
 Flask-Cors = "^3.0.10"
+Jinja2 = "^3.0.1"
 
 [tool.poetry.dev-dependencies]
 
